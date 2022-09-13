@@ -14,16 +14,22 @@ class Grid {
     values = values.concat('Σ');
     
     const header = this.createRow(values);
+    header.className = "beegrid-table-header";
     this.grid.appendChild(header);
   }
 
   createRow(values) {
     let row = document.createElement("tr");
     for (const el of values) {
-      let cell = document.createElement("td");
-      cell.textContent = el;
+      let cell = this.createCell(el);
       row.appendChild(cell);
     }
     return row;
+  }
+
+  createCell(el) {
+    let cell = document.createElement("td");
+    cell.textContent = el;
+    return cell;
   }
 }

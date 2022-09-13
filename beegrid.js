@@ -9,6 +9,6 @@
   const distribution = createDistribution();
   const grid = new Grid(distribution);
 
-  const wordList = document.querySelector(".sb-wordlist-items-pag");
+  const wordList = document.querySelector(".sb-wordlist-pag");
   wordList.append(grid.grid);
 })();

@@ -1,0 +1,16 @@
+.sb-wordlist-pag {
+  flex-direction: column;
+}
+
+.beegrid-table {
+  border: 1px solid #dcdcdc;
+  margin-right: 25px;
+}
+
+.beegrid-table tr td {
+  padding: 0.5rem;
+}
+
+.beegrid-table-header {
+  font-weight: bold;
+}

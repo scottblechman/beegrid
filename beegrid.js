@@ -9,7 +9,7 @@
   const distribution = createDistribution();
   const grid = new Grid(distribution);
 
-  const wordList = document.querySelector(".sb-wordlist-pag");
+  const wordList = document.querySelector(".sb-controls");
   if (!document.querySelector(".beegrid-table")) {
     wordList.append(grid.grid);
   }

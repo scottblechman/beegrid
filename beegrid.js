@@ -9,12 +9,12 @@
   const distribution = createDistribution();
   const grid = new Grid(distribution);
 
-  const wordList = document.querySelector(".sb-controls");
+  const board = document.querySelector(".sb-controls");
   if (!document.querySelector(".beegrid-table")) {
-    wordList.append(grid.grid);
+    board.append(grid.grid);
   }
 
-  const targetNode = document.querySelector('ul');
+  const answerList = document.querySelector("ul");
 
   const config = {
     attributes: false, 
@@ -24,12 +24,12 @@
     
   const callback = mutations => {  
     mutations.forEach(mutation => {
-      if (mutation.type === 'childList') {
+      if (mutation.type === "childList") {
         grid.recalculate();
       }
     });
   }
 
   const observer = new MutationObserver(callback);
-  observer.observe(targetNode, config);
+  observer.observe(answerList, config);
 })();

@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.nytimes.com/puzzles/spelling-bee"],
-      "js": ["util.js", "distribution.js", "grid.js", "beegrid.js"],
+      "js": ["util.js", "answers.js", "distribution.js", "grid.js", "beegrid.js"],
       "css": ["style.css"]
     }
   ]

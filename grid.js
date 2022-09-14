@@ -77,7 +77,7 @@ class Grid {
     this.grid.appendChild(footer);
   }
 
-  recalculate() {
+  recalculate(distribution) {
     console.log('recalculating');
   }
 }

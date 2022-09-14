@@ -14,3 +14,11 @@
 .beegrid-table-header {
   font-weight: bold;
 }
+
+.beegrid-table-cell:first-child {
+  font-weight: bold;
+}
+
+.beegrid-table-cell:last-child {
+  font-weight: bold;
+}

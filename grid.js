@@ -4,6 +4,11 @@ class Grid {
     this.grid.className = "beegrid-table";
 
     this.createHeader(distribution.range.lowest, distribution.range.highest);
+
+    const sortedCount = sortDictByKeys(distribution.letterCount);
+    for (const [key, value] of Object.entries(sortedCount)) {
+      this.createLetterRow(key, value);
+    }
   }
 
   createHeader(low, high) {
@@ -30,6 +35,14 @@ class Grid {
   createCell(el) {
     let cell = document.createElement("td");
     cell.textContent = el;
+    cell.className = "beegrid-table-cell";
     return cell;
+  }
+
+  createLetterRow(letter, counts) {
+    let values = [`${letter.toLocaleUpperCase()}:`];
+    console.log(values);
+    const row = this.createRow(values);
+    this.grid.appendChild(row);
   }
 }

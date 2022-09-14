@@ -10,5 +10,7 @@
   const grid = new Grid(distribution);
 
   const wordList = document.querySelector(".sb-wordlist-pag");
-  wordList.append(grid.grid);
+  if (!document.querySelector(".beegrid-table")) {
+    wordList.append(grid.grid);
+  }
 })();

@@ -5,7 +5,8 @@ function createDistribution() {
       highest: 0
     },
     twoLetterList: {},
-    letterCount: {}
+    letterCount: {},
+    lengthTotals: {}
   };
 
   for (const answer of window.wrappedJSObject.gameData.today.answers) {
@@ -38,6 +39,14 @@ function createDistribution() {
         const prevCount = distribution.letterCount[firstLetter][answer.length];
         distribution.letterCount[firstLetter][answer.length] = prevCount + 1;
       }
+    }
+
+    // Build length totals list
+    if(!(answer.length in distribution.lengthTotals)) {
+      distribution.lengthTotals[answer.length] = 1;
+    } else {
+      const total = distribution.lengthTotals[answer.length];
+      distribution.lengthTotals[answer.length] = total + 1;
     }
   }
 

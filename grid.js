@@ -9,14 +9,16 @@ class Grid {
     for (const [key, value] of Object.entries(sortedCount)) {
       this.createLetterRow(key, value, distribution.range.lowest, distribution.range.highest);
     }
+
+    this.createFooter(distribution.lengthTotals);
   }
 
   createHeader(low, high) {
-    let values = [''];
+    let values = [""];
     for (let i = low; i <= high; i++) {
       values = values.concat(i);
     }
-    values = values.concat('Σ');
+    values = values.concat("Σ");
     
     const header = this.createRow(values);
     header.className = "beegrid-table-header";
@@ -25,10 +27,17 @@ class Grid {
 
   createRow(values) {
     let row = document.createElement("tr");
-    for (const el of values) {
+    for (const [index, el] of values.entries()) {
       let cell = this.createCell(el);
+
+      // Italicize the combined total
+      if (values[0] === "Σ:" && index === values.length - 1) {
+        cell.id = "beegrid-table-total";
+      }
+      
       row.appendChild(cell);
     }
+
     return row;
   }
 
@@ -53,5 +62,18 @@ class Grid {
     values = values.concat(total);
     const row = this.createRow(values);
     this.grid.appendChild(row);
+  }
+
+  createFooter(totals) {
+    let values = ["Σ:"];
+    let combinedTotal = 0;
+    for (const total of Object.keys(totals)) {
+      values = values.concat(totals[total]);
+      combinedTotal += totals[total];
+    }
+    values = values.concat(combinedTotal);
+    const footer = this.createRow(values);
+    footer.className = "beegrid-table-footer";
+    this.grid.appendChild(footer);
   }
 }

@@ -15,10 +15,18 @@
   font-weight: bold;
 }
 
+.beegrid-table-footer {
+  font-weight: bold;
+}
+
 .beegrid-table-cell:first-child {
   font-weight: bold;
 }
 
 .beegrid-table-cell:last-child {
   font-weight: bold;
+}
+
+#beegrid-table-total {
+  font-style: italic;
 }

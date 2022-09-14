@@ -13,4 +13,23 @@
   if (!document.querySelector(".beegrid-table")) {
     wordList.append(grid.grid);
   }
+
+  const targetNode = document.querySelector('ul');
+
+  const config = {
+    attributes: false, 
+    childList: true, 
+    characterData: false
+  };
+    
+  const callback = mutations => {  
+    mutations.forEach(mutation => {
+      if (mutation.type === 'childList') {
+        grid.recalculate();
+      }
+    });
+  }
+
+  const observer = new MutationObserver(callback);
+  observer.observe(targetNode, config);
 })();

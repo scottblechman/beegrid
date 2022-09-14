@@ -34,7 +34,7 @@ class Grid {
       if (values[0] === "Σ:" && index === values.length - 1) {
         cell.id = "beegrid-table-total";
       }
-      
+
       row.appendChild(cell);
     }
 
@@ -75,5 +75,9 @@ class Grid {
     const footer = this.createRow(values);
     footer.className = "beegrid-table-footer";
     this.grid.appendChild(footer);
+  }
+
+  recalculate() {
+    console.log('recalculating');
   }
 }

@@ -4,10 +4,10 @@
   "name": "bee-grid",
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Adds the letter grid to the NYT Spelling Bee game.",
 
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/icon-48.png"
   },
 
   "content_scripts": [

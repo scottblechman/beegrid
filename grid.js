@@ -7,7 +7,7 @@ class Grid {
 
     const sortedCount = sortDictByKeys(distribution.letterCount);
     for (const [key, value] of Object.entries(sortedCount)) {
-      this.createLetterRow(key, value);
+      this.createLetterRow(key, value, distribution.range.lowest, distribution.range.highest);
     }
   }
 
@@ -39,9 +39,18 @@ class Grid {
     return cell;
   }
 
-  createLetterRow(letter, counts) {
+  createLetterRow(letter, counts, low, high) {
     let values = [`${letter.toLocaleUpperCase()}:`];
-    console.log(values);
+    let total = 0;
+    for (let i = low; i <= high; i++) {
+      if (i in counts) {
+        values = values.concat(counts[i]);
+        total += counts[i];
+      } else {
+        values = values.concat("-");
+      }
+    }
+    values = values.concat(total);
     const row = this.createRow(values);
     this.grid.appendChild(row);
   }

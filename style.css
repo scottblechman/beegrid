@@ -9,6 +9,15 @@
   margin-top: 2rem;
 }
 
+@media (max-width: 991.98px) {
+  .beegrid-container {
+    flex-direction: column;
+    width: 80vw;
+    max-width: 290px;
+    margin-top: 0;
+  }
+}
+
 .beegrid-table {
   border: 1px solid #dcdcdc;
   text-align: center;

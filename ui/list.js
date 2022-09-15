@@ -3,28 +3,36 @@ class List {
     this.list = this.createList(distribution.twoLetterList);
   }
 
+  addLine(list, line) {
+    let letter = document.createElement("li");
+    letter.className = "beegrid-list-line";
+    letter.textContent = line;
+    list.appendChild(letter);
+  }
+
   createList(letterList) {
     let list = document.createElement("ul");
     list.className = "beegrid-list";
-    let firstLetter = null;
+    let firstLetter = "";
     let line = "";
 
     for (const [key, value] of Object.entries(letterList)) {
+      const keyFirstLetter = key.substring(0, 1);
       if (!firstLetter) {
-        firstLetter = key.substring(0, 1);
+        firstLetter = keyFirstLetter;
       }
 
-      if (key.substring(0, 1) !== firstLetter) {
-        let letter = document.createElement("li");
-        letter.textContent = line;
-        list.appendChild(letter);
+      if (keyFirstLetter !== firstLetter) {
+        this.addLine(list, line);
 
         firstLetter = key.substring(0, 1);
-        line = "";
+        line = `${key.toLocaleUpperCase()}-${value}`;
       } else {
-        line = `${line}\t${key}-${value}`;
+        line = `${line}\t${key.toLocaleUpperCase()}-${value}`;
       }
     }
+
+    this.addLine(list, line);
 
     return list;
   }

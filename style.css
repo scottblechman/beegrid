@@ -1,5 +1,10 @@
+.sb-controls-box {
+  flex-direction: column;
+}
+
 .beegrid-container {
   display: flex;
+  justify-content: space-evenly;
   width: -moz-available;
   margin-top: 2rem;
 }
@@ -35,4 +40,9 @@
 
 .beegrid-list {
   min-width: fit-content;
+  padding-top: 1.5rem;
+}
+
+.beegrid-list-line {
+  margin: 1rem 0;
 }

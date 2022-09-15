@@ -33,7 +33,7 @@ function setGrid() {
     let container = document.createElement("div");
     container.className = "beegrid-container";
 
-    const board = document.querySelector(".sb-controls");
+    const board = document.querySelector(".sb-controls-box");
     board.appendChild(container);
   }
 

@@ -1,7 +1,11 @@
+.beegrid-container {
+  display: flex;
+  width: -moz-available;
+  margin-top: 2rem;
+}
+
 .beegrid-table {
   border: 1px solid #dcdcdc;
-  margin-top: 2rem;
-  width: -moz-available;
   text-align: center;
 }
 
@@ -27,4 +31,8 @@
 
 #beegrid-table-total {
   font-style: italic;
+}
+
+.beegrid-list {
+  min-width: fit-content;
 }

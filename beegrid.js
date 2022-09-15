@@ -37,6 +37,14 @@ function setGrid() {
     board.appendChild(container);
   }
 
+  // Add menu item for settings
+  if (!document.querySelector("#beegrid-button-toggle")) {
+    const hintButton = document.querySelector(".pz-toolbar-button__hints");
+    console.log(hintButton);
+    const toggle = new Toggle(true);
+    hintButton.parentElement.insertBefore(toggle.content, hintButton.nextSibling);
+  }
+
   const answerList = document.querySelector("ul");
 
   const config = {

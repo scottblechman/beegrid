@@ -1,7 +1,25 @@
+.sb-controls-box {
+  flex-direction: column;
+}
+
+.beegrid-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: -moz-available;
+  margin-top: 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .beegrid-container {
+    flex-direction: column;
+    width: 80vw;
+    max-width: 290px;
+    margin-top: 0;
+  }
+}
+
 .beegrid-table {
   border: 1px solid #dcdcdc;
-  margin-top: 2rem;
-  width: -moz-available;
   text-align: center;
 }
 
@@ -27,4 +45,13 @@
 
 #beegrid-table-total {
   font-style: italic;
+}
+
+.beegrid-list {
+  min-width: fit-content;
+  padding-top: 1.5rem;
+}
+
+.beegrid-list-line {
+  margin: 1rem 0;
 }

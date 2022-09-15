@@ -9,7 +9,18 @@ function createDistribution() {
     lengthTotals: {}
   };
 
-  for (const answer of window.wrappedJSObject.gameData.today.answers) {
+  const foundAnswers = getAnswers();
+  let answers = window.wrappedJSObject.gameData.today.answers;
+
+  // Workaround for error in filter()
+  let filteredAnswers = [];
+  for (const a of answers) {
+    if (!(foundAnswers.includes(a))) {
+      filteredAnswers = filteredAnswers.concat(a);
+    }
+  }
+
+  for (const answer of filteredAnswers) {
     // Set range of word lengths
     distribution.range.lowest = Math.min(answer.length, distribution.range.lowest);
     distribution.range.highest = Math.max(answer.length, distribution.range.highest);

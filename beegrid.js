@@ -1,23 +1,40 @@
 function setGrid() {
-  const distribution = createDistribution();
-  const grid = new Grid(distribution);
-  const list = new List(distribution);
-
   const container = document.querySelector(".beegrid-container");
-  const table = document.querySelector(".beegrid-table");
-  const listNode = document.querySelector(".beegrid-list");
+  
+  if (getVisibility()) {
+    const distribution = createDistribution();
+    const grid = new Grid(distribution);
+    const list = new List(distribution);
 
-  if (!table) {
-    container.appendChild(grid.grid);
-  } else {
-    table.replaceWith(grid.grid);
-  }
+    const table = document.querySelector(".beegrid-table");
+    const listNode = document.querySelector(".beegrid-list");
 
-  if (!listNode) {
-    container.appendChild(list.list);
+    if (!table) {
+      container.appendChild(grid.grid);
+    } else {
+      table.replaceWith(grid.grid);
+    }
+
+    if (!listNode) {
+      container.appendChild(list.list);
+    } else {
+      listNode.replaceWith(list.list);
+    }
   } else {
-    listNode.replaceWith(list.list);
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
   }
+}
+
+function toggleVisibility() {
+  const visibility = getVisibility();
+  setVisibility(!visibility);
+
+  const toggleButton = document.querySelector("#beegrid-button-toggle");
+  toggleButton.textContent = `bee-grid ${!visibility ? "ON" : "OFF"}`;
+  
+  setGrid();
 }
 
 (() => {
@@ -35,6 +52,14 @@ function setGrid() {
 
     const board = document.querySelector(".sb-controls-box");
     board.appendChild(container);
+  }
+
+  // Add menu item for settings
+  if (!document.querySelector("#beegrid-button-toggle")) {
+    const hintButton = document.querySelector(".pz-toolbar-button__hints");
+    const toggle = new Toggle(getVisibility());
+    toggle.content.addEventListener("click", toggleVisibility);
+    hintButton.parentElement.insertBefore(toggle.content, hintButton.parentElement.firstElementChild);
   }
 
   const answerList = document.querySelector("ul");

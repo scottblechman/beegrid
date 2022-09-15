@@ -1,9 +1,11 @@
-let visible = true;
-
 function getVisibility() {
-  return visible;
+  if (!localStorage.getItem("beekeeper.visible")) {
+    return true;  // default to visible
+  }
+
+  return localStorage.getItem("beekeeper.visible") === "true";
 }
 
-function setVisibility(vis) {
-  visible = vis;
+function setVisibility(visible) {
+  localStorage.setItem("beekeeper.visible", `${visible === true ? "true" : "false"}`);
 }

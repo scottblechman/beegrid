@@ -7,12 +7,12 @@ class Grid {
     let grid = document.createElement("table");
     grid.className = "beegrid-table";
 
-    const header = this.createHeader(distribution.range.lowest, distribution.range.highest);
+    const header = this.createHeader(distribution.range.lowest, distribution.range.highest, distribution.lengthTotals);
     grid.appendChild(header);
 
     const sortedCount = sortDictByKeys(distribution.letterCount);
     for (const [key, value] of Object.entries(sortedCount)) {
-      const row = this.createLetterRow(key, value, distribution.range.lowest, distribution.range.highest);
+      const row = this.createLetterRow(key, value, distribution.range.lowest, distribution.range.highest, distribution.lengthTotals);
       grid.appendChild(row);
     }
 
@@ -22,10 +22,13 @@ class Grid {
     return grid;
   }
 
-  createHeader(low, high) {
+  createHeader(low, high, totals) {
     let values = [""];
     for (let i = low; i <= high; i++) {
-      values = values.concat(i);
+      // Exclude lengths with no words left
+      if (Object.keys(totals).includes(`${i}`)) {
+        values = values.concat(i);
+      }
     }
     values = values.concat("Σ");
     
@@ -57,15 +60,17 @@ class Grid {
     return cell;
   }
 
-  createLetterRow(letter, counts, low, high) {
+  createLetterRow(letter, counts, low, high, totals) {
     let values = [`${letter.toLocaleUpperCase()}:`];
     let total = 0;
     for (let i = low; i <= high; i++) {
-      if (i in counts) {
-        values = values.concat(counts[i]);
-        total += counts[i];
-      } else {
-        values = values.concat("-");
+      if (Object.keys(totals).includes(`${i}`)) {
+        if (i in counts) {
+          values = values.concat(counts[i]);
+          total += counts[i];
+        } else {
+          values = values.concat("-");
+        }
       }
     }
     values = values.concat(total);

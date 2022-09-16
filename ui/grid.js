@@ -5,7 +5,7 @@ class Grid {
 
   createGrid(distribution) {
     let grid = document.createElement("table");
-    grid.className = "beegrid-table";
+    grid.className = "beekeeper-table";
 
     const header = this.createHeader(distribution.range.lowest, distribution.range.highest, distribution.lengthTotals);
     grid.appendChild(header);
@@ -33,7 +33,7 @@ class Grid {
     values = values.concat("Σ");
     
     const header = this.createRow(values);
-    header.className = "beegrid-table-header";
+    header.className = "beekeeper-table-header";
     return header;
   }
 
@@ -44,7 +44,7 @@ class Grid {
 
       // Italicize the combined total
       if (values[0] === "Σ:" && index === values.length - 1) {
-        cell.id = "beegrid-table-total";
+        cell.id = "beekeeper-table-total";
       }
 
       row.appendChild(cell);
@@ -56,7 +56,7 @@ class Grid {
   createCell(el) {
     let cell = document.createElement("td");
     cell.textContent = el;
-    cell.className = "beegrid-table-cell";
+    cell.className = "beekeeper-table-cell";
     return cell;
   }
 
@@ -86,7 +86,7 @@ class Grid {
     }
     values = values.concat(combinedTotal);
     const footer = this.createRow(values);
-    footer.className = "beegrid-table-footer";
+    footer.className = "beekeeper-table-footer";
     return footer;
   }
 }

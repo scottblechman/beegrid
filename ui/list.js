@@ -5,14 +5,14 @@ class List {
 
   addLine(list, line) {
     let letter = document.createElement("li");
-    letter.className = "beegrid-list-line";
+    letter.className = "beekeeper-list-line";
     letter.textContent = line;
     list.appendChild(letter);
   }
 
   createList(letterList) {
     let list = document.createElement("ul");
-    list.className = "beegrid-list";
+    list.className = "beekeeper-list";
     let firstLetter = "";
     let line = "";
 

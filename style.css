@@ -2,7 +2,7 @@
   flex-direction: column;
 }
 
-.beegrid-container {
+.beekeeper-container {
   display: flex;
   justify-content: space-evenly;
   width: -moz-available;
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 991.98px) {
-  .beegrid-container {
+  .beekeeper-container {
     flex-direction: column;
     width: 80vw;
     max-width: 290px;
@@ -18,40 +18,40 @@
   }
 }
 
-.beegrid-table {
+.beekeeper-table {
   border: 1px solid #dcdcdc;
   text-align: center;
 }
 
-.beegrid-table tr td {
+.beekeeper-table tr td {
   padding: 0.5rem 0.66rem;
 }
 
-.beegrid-table-header {
+.beekeeper-table-header {
   font-weight: bold;
 }
 
-.beegrid-table-footer {
+.beekeeper-table-footer {
   font-weight: bold;
 }
 
-.beegrid-table-cell:first-child {
+.beekeeper-table-cell:first-child {
   font-weight: bold;
 }
 
-.beegrid-table-cell:last-child {
+.beekeeper-table-cell:last-child {
   font-weight: bold;
 }
 
-#beegrid-table-total {
+#beekeeper-table-total {
   font-style: italic;
 }
 
-.beegrid-list {
+.beekeeper-list {
   min-width: fit-content;
   padding-top: 1.5rem;
 }
 
-.beegrid-list-line {
+.beekeeper-list-line {
   margin: 1rem 0;
 }

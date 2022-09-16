@@ -1,10 +1,10 @@
 {
 
   "manifest_version": 2,
-  "name": "bee-grid",
+  "name": "BeeKeeper",
   "version": "1.0",
 
-  "description": "Adds the letter grid to the NYT Spelling Bee game.",
+  "description": "Adds two solution hints, the letter grid and the 2-letter list, to the NYT Spelling Bee game.",
 
   "icons": {
     "48": "icons/icon-48.png"
@@ -13,7 +13,8 @@
   "content_scripts": [
     {
       "matches": ["*://*.nytimes.com/puzzles/spelling-bee"],
-      "js": ["data/util.js", "data/answers.js", "data/distribution.js", "data/settings.js", "ui/toggle.js", "ui/grid.js", "ui/list.js", "beegrid.js"],
+      "js": ["data/util.js", "data/answers.js", "data/distribution.js","data/settings.js",
+            "ui/toggle.js", "ui/grid.js", "ui/list.js", "beekeeper.js"],
       "css": ["style.css"]
     }
   ]

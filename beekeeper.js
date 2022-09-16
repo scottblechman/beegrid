@@ -1,5 +1,5 @@
 function setGrid() {
-  const container = document.querySelector(".beegrid-container");
+  const container = document.querySelector(".beekeeper-container");
   
   if (getVisibility()) {
     const distribution = createDistribution();
@@ -10,8 +10,8 @@ function setGrid() {
     const grid = new Grid(distribution);
     const list = new List(distribution);
 
-    const table = document.querySelector(".beegrid-table");
-    const listNode = document.querySelector(".beegrid-list");
+    const table = document.querySelector(".beekeeper-table");
+    const listNode = document.querySelector(".beekeeper-list");
 
     if (!table) {
       container.appendChild(grid.grid);
@@ -35,8 +35,8 @@ function toggleVisibility() {
   const visibility = getVisibility();
   setVisibility(!visibility);
 
-  const toggleButton = document.querySelector("#beegrid-button-toggle");
-  toggleButton.textContent = `bee-grid ${!visibility ? "ON" : "OFF"}`;
+  const toggleButton = document.querySelector("#beekeeper-button-toggle");
+  toggleButton.textContent = `BeeKeeper ${!visibility ? "ON" : "OFF"}`;
   
   setGrid();
 }
@@ -50,16 +50,16 @@ function toggleVisibility() {
   window.hasRun = true;
 
   // Create UI container
-  if (!document.querySelector(".beegrid-container")) {
+  if (!document.querySelector(".beekeeper-container")) {
     let container = document.createElement("div");
-    container.className = "beegrid-container";
+    container.className = "beekeeper-container";
 
     const board = document.querySelector(".sb-controls-box");
     board.appendChild(container);
   }
 
   // Add menu item for settings
-  if (!document.querySelector("#beegrid-button-toggle")) {
+  if (!document.querySelector("#beekeeper-button-toggle")) {
     const hintButton = document.querySelector(".pz-toolbar-button__hints");
     const toggle = new Toggle(getVisibility());
     toggle.content.addEventListener("click", toggleVisibility);

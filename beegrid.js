@@ -3,6 +3,10 @@ function setGrid() {
   
   if (getVisibility()) {
     const distribution = createDistribution();
+    if (distribution.range.highest === 0) {
+      // All words found
+      return;
+    }
     const grid = new Grid(distribution);
     const list = new List(distribution);
 

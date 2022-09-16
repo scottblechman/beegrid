@@ -1,3 +1,7 @@
+/**
+ * Parses the current game data to determine letter distributions used to build hints.
+ * @returns answer distribution
+ */
 function createDistribution() {
   let distribution = {
     range: {

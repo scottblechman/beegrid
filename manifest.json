@@ -1,20 +1,27 @@
 {
-
+  "description": "Adds two solution hints, the letter grid and the 2-letter list, to the NYT Spelling Bee game.",
   "manifest_version": 2,
   "name": "BeeKeeper",
   "version": "1.0",
-
-  "description": "Adds two solution hints, the letter grid and the 2-letter list, to the NYT Spelling Bee game.",
-
+  "homepage_url": "https://github.com/scottblechman/beekeeper",
   "icons": {
-    "48": "icons/icon-48.png"
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-o6.png"
   },
 
   "content_scripts": [
     {
       "matches": ["*://*.nytimes.com/puzzles/spelling-bee"],
-      "js": ["data/util.js", "data/answers.js", "data/distribution.js","data/settings.js",
-            "ui/toggle.js", "ui/grid.js", "ui/list.js", "beekeeper.js"],
+      "js": [
+          "data/util.js",
+          "data/answers.js",
+          "data/distribution.js",
+          "data/settings.js",
+          "ui/EnabledButton.js", 
+          "ui/LetterGrid.js",
+          "ui/TwoLetterList.js",
+          "beekeeper.js"
+        ],
       "css": ["style.css"]
     }
   ]

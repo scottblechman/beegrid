@@ -1,4 +1,5 @@
 # BeeKeeper
+[![build](https://github.com/scottblechman/beekeeper/actions/workflows/build_release.yml/badge.svg)](https://github.com/scottblechman/beekeeper/actions/workflows/build_release.yml)
 
 **BeeKeeper** is a unofficial browser add-on that adds hints to [The New York Times Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) puzzle.
 

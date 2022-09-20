@@ -2,11 +2,11 @@
   "description": "Adds two solution hints, the letter grid and the 2-letter list, to the NYT Spelling Bee game.",
   "manifest_version": 2,
   "name": "BeeKeeper",
-  "version": "1.0",
+  "version": "1.0.0",
   "homepage_url": "https://github.com/scottblechman/beekeeper",
   "icons": {
     "48": "icons/icon-48.png",
-    "96": "icons/icon-o6.png"
+    "96": "icons/icon-96.png"
   },
 
   "content_scripts": [

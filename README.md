@@ -11,6 +11,10 @@
 * Automatically updates the grid and the list as answers are found
 * Adds an option to the game toolbar to toggle hints on/off
 
+## Installation
+### Firefox
+Install from [Firefox Add-ons](https://addons.mozilla.org/addon/beekeeper/)
+
 ## License
 BeeKeeper is licensed under [GPL v3.0](https://github.com/scottblechman/beekeeper/blob/main/LICENSE?raw=true).
 

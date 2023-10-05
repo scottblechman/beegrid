@@ -18,6 +18,12 @@
   }
 }
 
+@media (max-height: 1024px) and (min-width:991.99px) {
+  .beekeeper-container {
+    margin-bottom: 0.825rem;
+  }
+}
+
 .beekeeper-table {
   border: 1px solid #dcdcdc;
   text-align: center;

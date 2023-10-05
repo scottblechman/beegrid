@@ -11,7 +11,10 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.nytimes.com/puzzles/spelling-bee"],
+      "matches": [
+        "*://*.nytimes.com/puzzles/spelling-bee",
+        "*://*.nytimes.com/puzzles/spelling-bee/*"
+      ],
       "js": [
           "data/util.js",
           "data/answers.js",

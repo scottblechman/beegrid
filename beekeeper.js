@@ -19,6 +19,9 @@
       const distribution = createDistribution();
       if (distribution.range.highest === 0) {
         // All words found
+        if (container !== null) {
+          container.style.display = 'none';
+        }
         return;
       }
       const grid = new LetterGrid(distribution);
